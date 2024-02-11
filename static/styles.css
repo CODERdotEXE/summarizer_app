@@ -1,0 +1,155 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+  body {
+    font-family: 'Poppins';
+}
+body {
+    margin: 0;
+    padding: 0;
+    background:none;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Form styles */
+form {
+    text-align: center;
+    margin: 30px 50px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 10px;
+    border: 3px solid wheat;
+    border-radius: 25px;
+    padding: 40px;
+    font-size: 16px;
+    font-family: 'Poppins';
+    background: none;
+    box-sizing: border-box; /* Include padding in height calculation */
+}
+textarea:focus {
+    outline: none;
+    border-color: wheat;
+}
+
+input[type="submit"] {
+    color: black;
+    padding: 10px 20px;
+border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Result styles */
+.result {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.result h2 {
+    margin-top: 0;
+}
+
+.result p {
+    margin-bottom: 0;
+}
+.result_container {
+    display: flex; /* Use flexbox */
+    justify-content: space-around; /* Space evenly between the two containers */
+    flex-wrap: wrap; /* Allow containers to wrap to the next line if needed */
+}
+
+.input_container,
+.summary_container {
+    width: 48%; /* Each container takes 48% width */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+    border: 3px solid wheat;
+    border-radius: 25px;
+    background-color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input_container h2,
+.summary_container h2 {
+    margin-top: 0;
+}
+
+.input_container p,
+.summary_container p {
+    margin-bottom: 0;
+}
+.input_container hr,
+.summary_container hr {
+    border: none;
+    height: 3px;
+    background-color: wheat;
+}
+#copy-button {
+    width: 100px;
+    position: absolute; /* Position relative to the container */
+    top: 20px; /* Distance from top */
+    right: 10px; /* Distance from right */
+    padding: 10px 15px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s; /* Add a smooth transition on hover */
+}
+
+#copy-button:hover {
+    background-color: black;
+    color: white;
+}
+.return-container {
+    text-align: center;
+    margin-top: 20px;
+}
+.return-button{ 
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+.return-button:hover {
+    background-color: black;
+    color: white;
+}
+/* Responsive styles */
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    
+    textarea {
+        height: 150px;
+    }
+}

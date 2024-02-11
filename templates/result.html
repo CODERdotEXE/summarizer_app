@@ -1,0 +1,81 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <title>Summary Result</title>
+</head>
+<body>
+    <h1>Simplified Text</h1>
+    <div class="result_container">
+        <div class="input_container">
+            <h2>Your Input Text</h2>
+            <hr>
+            <p>{{ input_text }}</p>
+        </div>
+        <div class="summary_container">
+            <h2>Summary</h2>
+            <hr>
+            <p>{{ summary }}</p>
+        </div>
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Summary Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function copyText() {
+            /* Get the summary text */
+            var summaryText = document.getElementById("summary-text").textContent;
+    
+            /* Create a temporary input element */
+            var tempInput = document.createElement("input");
+            tempInput.value = summaryText;
+            document.body.appendChild(tempInput);
+    
+            /* Select the text in the input element */
+            tempInput.select();
+            tempInput.setSelectionRange(0, 99999); /* For mobile devices */
+    
+            /* Copy the selected text */
+            document.execCommand("copy");
+    
+            /* Remove the temporary input element */
+            document.body.removeChild(tempInput);
+    
+            /* Change button text to "Copied" */
+            var copyButton = document.getElementById("copy-button");
+            copyButton.textContent = "Copied";
+    
+            /* Reset button text after a few seconds */
+            setTimeout(function() {
+                copyButton.textContent = "Copy Text";
+            }, 2000);
+        }
+    </script>
+    
+</head>
+<body>
+    <h1>Summary Result</h1>
+    <div class="result_container">
+        <div class="input_container">
+            <h2>Your Input Text</h2>
+            <hr>
+            <p>{{ input_text }}</p>
+        </div>
+        <div class="summary_container">
+            <h2>Simplified Output</h2>
+            <hr>
+            <p id="summary-text">{{ summary }}</p>
+            <button id="copy-button" onclick="copyText()">Copy Text</button>
+        </div>
+    </div>
+    <div class="return-container">
+        <a href="/" class="return-button">Return</a>
+    </div>
+</body>
+</html>
